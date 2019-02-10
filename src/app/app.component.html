@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="title" name="title" placeholder="Title...">
+<textarea [(ngModel)]="content" name="contet" cols="30" rows="10" placeholder="Content..."></textarea>
+<input type="submit" value="Add a Post" (click)="addPost()">
+
+<ul *ngFor="let post of posts | async">
+  <li>
+    <strong>{{post.title}}</strong>
+    <br>
+    {{post.content}}
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

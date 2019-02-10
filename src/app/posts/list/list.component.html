@@ -1,0 +1,13 @@
+<ul *ngFor="let post of posts | async">
+  <li (click)="getPost(post.key)">
+    <strong>{{post.title}}</strong>
+    <br>
+    {{post.content}}
+  </li>
+</ul>
+
+<div *ngIf="singlePost | async">
+    <h1>A specfic post:</h1>
+    <h3>{{ (singlePost | async).title }}</h3>
+    <p>{{ (singlePost | async).content }}</p>
+</div>
